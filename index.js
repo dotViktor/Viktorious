@@ -41,6 +41,7 @@ async function submitInfo(){ //this gets the player accId
 
 	await getMatchId()
 
+	gameData.length = 0;
 	for(let i = 0; i <= 9; i++){
 		gameData.push(await getMatchData(gameId[i]));
 	}
