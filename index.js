@@ -6,21 +6,21 @@ let idInfo = {
     sumId: null,
 };
 let gameId = []; // this is the empty array storing all game ids of the last 10 games(0-9)
+let partId = [];
 let gameData = [];
 let champData = [];
+let playerData = [];
 //callbacks
 function setPlayerInfo(data) { //this sets the accId
     idInfo.accId = data.accountId;
     idInfo.sumId = data.id;
 }
-
 function setMatchId(data) { //this sets all the game ids
     gameId.length = 0; // this clears the array every time when you submit, prefents game stacking
     for (let i = 0; i <= 9; i++) {
         gameId.push(data.matches[i].gameId);
     }
 }
-
 function setChampionData(data) {
     champData.length = 0;
     for (let i = 0; i <= 2; i++) {
@@ -50,19 +50,32 @@ async function getChampionData() {
         .then(data => setChampionData(data))
 }
 //get functions
+//logix
+
+//logix
 async function submitInfo() { //this gets the player accId
 
     idInfo.pName = document.getElementById("nameInput").value;
     idInfo.region = document.getElementById("region").value;
 
-    await getPlayerData()
+    await getPlayerData();
 
-    await getMatchId()
+    await getMatchId();
 
     getChampionData();
 
     gameData.length = 0;
     for (let i = 0; i <= 9; i++) {
         gameData.push(await getMatchData(gameId[i]));
+    }
+
+    partId.length = 0;
+    for(let i = 0; i <= 9; i++){
+    	partId.push(gameData[i].participantIdentities.find(o => o.player.summonerName === idInfo.pName).participantId)
+    }
+
+    playerData.length = 0;
+    for(let i = 0; i <= 9; i++){
+    	playerData.push(gameData[i].participants.find(o => o.participantId === partId[i]))
     }
 };
