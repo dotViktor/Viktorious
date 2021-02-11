@@ -1,0 +1,122 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #393B45;
+	box-shadow: none;
+	border-color: inherit;
+	outline: none;
+
+
+}
+
+.regionselect select{
+    font-size: 1.2vw;
+	padding: 0vw;
+	margin: 0vw;
+	position: absolute;
+	left: 60%;
+	top: 25%;
+	background: #6E7889;
+	appearance: none;
+	color: white;
+}
+.regionselect select:focus{
+	outline: none;
+}
+.search-box{
+	position: absolute;
+	top: 12vw;
+	left: 50vw;
+	transform: translate(-50%, -50%) ;
+	background: #6E7889;
+	height: 2.13vw;
+	border-radius: 2.13vw;
+	padding: 0.53vw;
+	width: 20vw;
+}
+
+.search-box img{
+	width: 2.13vw;
+	height: 2.13vw;
+	position: relative;
+	left: 0vw;
+    bottom: 0.05vw;
+    margin: 0vw;
+    padding: 0vw;
+}
+
+.search-box img:focus{
+	outline: none;
+	border-color: none;
+}
+
+.search-btn {
+	color: #6E7889 ;
+	float: right;
+	width: 2.13vw;
+	height: 2.13vw;
+	border-radius: 50%;
+	background: #6E7889 ;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	border-radius: 20vw;
+
+}
+
+
+
+.container button:focus{
+	outline:none;
+	border-radius: 25vw;
+	
+}
+
+
+.search-text{
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 0.85vw;
+	line-height: 2.13vw;
+	font-size: 1.3vw;
+}
+::placeholder{
+	color:white;
+	opacity: 0.1;
+}
+.header{
+	position: relative;
+	top: 50%;
+	left: 37%;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 2.66vw;
+	color: #F3B54A;
+
+
+}
+
+ .container {
+        padding: 0vw;
+        margin: 0vw;
+      }
+      button {
+        background: none;
+        border: 0vw;
+        border-radius: 0px;
+        margin: 0vw;
+        padding: 0em 0em;
+        position: absolute;
+        left: 85%;
+        bottom: 15%;
+        appearance: none;
+    }
+
+.container button:active{
+  transition: background 0s;
+  background-color: #F3B54A;
+  opacity: 0.20;
+  background-size: 100%;
