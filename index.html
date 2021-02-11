@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Voctorius</title>
 	<script src="index.js"></script>
-	<link rel="stylesheet" href="stylesheet.css">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Viktorious</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-		<form id="accountSelection">
-			<input id="nameInput" type="text" placeholder="koko e gei" autofocus>
-			<select id="region">
-				<option value="BR1">BR</option>
-				<option value="EUN1">EUNE</option>
-				<option value="EUW1">EUW</option>
-				<option value="JP1">JP</option>
-				<option value="KR">KR</option>
-				<option value="LA1">LAS</option>
-				<option value="LA2">LAN</option>
-				<option value="NA1">NA</option>
-				<option value="OC1">OCE</option>
-				<option value="RU">RU</option>
-				<option value="TR1">TR</option>
-			</select>
-      		<button type="Button" onClick="submitInfo()">submit</button>
-		</form>
-</body>
+	<div class="header">
+		<h1> Victorious</h1>
+	</div>
+	
+      
+	<div class="search-box" >
+		<input class="search-text" type="text" id="nameInput" placeholder="Enter Username">
+		<div class="container">
+		  <button type="Button" onClick="submitInfo()">
+			<img src="img1/search logo.png">
+		  </button>
+	    </div>
+		<div class="regionselect">
+            <select id="region">
+                <option value="BR1">BR</option>
+                <option value="EUN1">EUNE</option>
+                <option value="EUW1">EUW</option>
+                <option value="JP1">JP</option>
+                <option value="KR">KR</option>
+                <option value="LA1">LAS</option>
+                <option value="LA2">LAN</option>
+                <option value="NA1">NA</option>
+                <option value="OC1">OCE</option>
+                <option value="RU">RU</option>
+                <option value="TR1">TR</option>
+            </select>
+        </div>
+	
+	
+
 </html>
