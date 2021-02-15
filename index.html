@@ -3,9 +3,11 @@
 <head>
 	<title>Voctorius</title>
 	<script src="index.js"></script>
+	<script src="frontend.js"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 </head>
 <body>
 	<div class="header">
@@ -16,7 +18,7 @@
 	<div class="search-box" >
 		<input class="search-text" type="text" id="nameInput" placeholder="Enter Username">
 		<div class="container">
-		  <button type="Button" onClick="submitInfo()">
+		  <button type="Button" onClick="submitInfo();toggleVisible();">
 			<img src="img1/search logo.png">
 		  </button>
 	    </div>
@@ -35,7 +37,10 @@
                 <option value="TR1">TR</option>
             </select>
         </div>
-	
-	
+	</div>
 
+	<div id="playerData">
+		
+	</div>
+</body>
 </html>

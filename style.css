@@ -65,7 +65,6 @@ body {
 }
 
 
-
 .container button:focus{
 	outline:none;
 	border-radius: 25vw;
@@ -120,3 +119,13 @@ body {
   background-color: #F3B54A;
   opacity: 0.20;
   background-size: 100%;
+
+}
+
+#playerData{
+	visibility: hidden;
+	width: 80%;
+	margin: auto;
+	background-color: white;
+	height: 30vw;
+}

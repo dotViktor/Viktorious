@@ -70,12 +70,12 @@ async function submitInfo() { //this gets the player accId
     }
 
     partId.length = 0;
-    for(let i = 0; i <= 9; i++){
+    for (let i = 0; i <= 9; i++){
     	partId.push(gameData[i].participantIdentities.find(o => o.player.summonerName === idInfo.pName).participantId)
     }
 
     playerData.length = 0;
-    for(let i = 0; i <= 9; i++){
+    for (let i = 0; i <= 9; i++){
     	playerData.push(gameData[i].participants.find(o => o.participantId === partId[i]))
     }
 };
