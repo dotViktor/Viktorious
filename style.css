@@ -123,9 +123,278 @@ body {
 }
 
 #playerData{
+	position: absolute;
+	top:14vw;
+	left: 10%;
 	visibility: hidden;
 	width: 80%;
-	margin: auto;
 	background-color: white;
 	height: 30vw;
+	border-radius: 3px;
+}
+
+#accountInfo{
+	background-color: red;
+	height: 50px;
+	width: 50px;
+	float:left;
+	height: 29vw;
+	width: 35%;
+	margin: 10px 10px 10px 10px;
+
+	display: grid;
+	grid-template-rows: 120px 20px auto auto auto;
+	grid-template-columns: 40px auto 40px;
+	grid-gap: 10px 10px;
+
+
+}
+#gameInfo{
+	display: grid;
+	background-color: blue;
+	height: 29vw;
+	margin: 10px 10px 10px 10px;
+	width: 57%;
+	right:10px;
+	float:right;
+
+	grid-template-rows: auto auto auto;
+	grid-template-columns: 150px 100px auto auto;
+
+}
+
+#pIcon{
+	height:6vw;
+	width:6vw;
+	margin: auto;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	justify-self: center;
+}
+
+#pName{
+	margin: auto;
+
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	justify-self: center;
+}
+
+#champ1{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+
+	justify-self: left;
+
+	height:4vw;
+	width:4vw;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#champ2{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 4;
+	grid-row-end: 5;
+
+	justify-self: left;
+
+	height:4vw;
+	width:4vw;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#champ3{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 5;
+	grid-row-end: 6;
+
+	justify-self: left;
+
+	height:4vw;
+	width:4vw;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#cName0{
+	margin:0px;
+}
+#cPoints0{
+	margin:0px;
+
+}
+#cName1{
+	margin:0px;
+	
+}
+#cPoints1{
+	margin:0px;
+
+}
+#cName2{
+	margin:0px;
+
+}
+#cPoints2{
+	margin:0px;
+
+}
+#sec1{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	justify-self: center;
+	margin: 0px 0px 0px 0px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#sec2{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 4;
+	grid-row-end: 5;
+	justify-self: center;
+	margin: 0px 0px 0px 0px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#sec3{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 5;
+	grid-row-end: 6;
+	justify-self: center;
+	margin: 0px 0px 0px 0px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#cGIcon1{
+    height: 6vw;
+    width: 6vw;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	justify-self: center;
+	margin:auto;
+
+}
+#cGIcon2{
+    height: 6vw;
+    width: 6vw;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	justify-self: center;
+	margin:auto;
+
+}
+#cGIcon3{
+	height: 6vw;
+    width: 6vw;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	justify-self: center;
+	margin:auto;
+
+}
+#kdaPanel1{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+#kdaPanel2{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+#kdaPanel3{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+#statsPanel1 p{
+	margin: 0px 0px 0px 0px;
+}
+#statsPanel2 p{
+	margin: 0px 0px 0px 0px;
+}
+#statsPanel3 p{
+	margin: 0px 0px 0px 0px;
+}
+
+#statsPanel1{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+#statsPanel2{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+#statsPanel3{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+#trophy{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 4;
+	grid-column-end: 5;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	color: #F3B54A;
+}
+#wintitle h1{
+	margin:0px 0px 0px 0px;
+}
+#wintitle h2{
+	margin:0px 0px 0px 0px;
+}
+#wintitle{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 4;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+#winrate{
+	justify-self: center;
+	margin: auto;
+	grid-column-start: 4;
+	grid-column-end: 5;
+	grid-row-start: 2;
+	grid-row-end: 3;
 }

@@ -1,19 +1,37 @@
-//TODO make a github repo, try to make the fetch response set the match id, removing the need for setMatchId
 let idInfo = {
     pName: null,
     region: null,
     accId: null,
     sumId: null,
+    iconId: null,
+};
+let images = {
+    pIcon: null,
+    cIcon1: null,
+    cIcon2: null,
+    cIcon3: null,
+    cGIcon1: null,
+    cGIcon2: null,
+    cGIcon3: null,
+    cBackground: null,
+    cBanner: null,
 };
 let gameId = []; // this is the empty array storing all game ids of the last 10 games(0-9)
 let partId = [];
 let gameData = [];
+let gameResult = [];
 let champData = [];
 let playerData = [];
+let champName = [];
 //callbacks
+function setChampionName(data, i){
+    champName.push(data.name);
+    paragraphChanger(i)
+}
 function setPlayerInfo(data) { //this sets the accId
     idInfo.accId = data.accountId;
     idInfo.sumId = data.id;
+    idInfo.iconId = data.profileIconId;
 }
 function setMatchId(data) { //this sets all the game ids
     gameId.length = 0; // this clears the array every time when you submit, prefents game stacking
@@ -49,8 +67,42 @@ async function getChampionData() {
         .then(res => res.json())
         .then(data => setChampionData(data))
 }
+async function getChampionName(owo, i){
+    fetch(`https://cdn.communitydragon.org/11.1.3/champion/${owo}/data`)
+    .then(res => res.json())
+    .then(data => setChampionName(data, i))
+}
 //get functions
 //logix
+    function paragraphChanger(i){
+        document.getElementById("cName" + i).textContent = champName[i];
+        document.getElementById("cPoints" + i).textContent = champData[i].championPoints;
+    }
+    function kdaMaker(i){
+        let kda = (playerData[i].stats.kills + playerData[i].stats.assists) /  playerData[i].stats.deaths;
+        return kda;
+    }
+    function winToNum(i){
+        let result = gameData[i].teams.find(o => o.teamId === playerData[i].teamId).win;
+        let num;
+        if (result === "Win"){
+            num = 1;
+        } else {
+            num = 0;
+        }
+        return num;
+    }
+    function winRate(){
+        for(let i = 0; i <= 9; i++){
+            gameResult.push(winToNum(i));
+        }
+
+        let sum = gameResult.reduce(function(a, b){
+            return a + b;
+        }, 0);
+        let winRate = sum / 10;
+        return winRate * 100 + "%";
+    }
 
 //logix
 async function submitInfo() { //this gets the player accId
@@ -64,6 +116,7 @@ async function submitInfo() { //this gets the player accId
 
     getChampionData();
 
+    gameResult.length = 0;
     gameData.length = 0;
     for (let i = 0; i <= 9; i++) {
         gameData.push(await getMatchData(gameId[i]));
@@ -78,4 +131,57 @@ async function submitInfo() { //this gets the player accId
     for (let i = 0; i <= 9; i++){
     	playerData.push(gameData[i].participants.find(o => o.participantId === partId[i]))
     }
+
+    champName.length = 0;
+    for (let i = 0; i<= 2; i++){
+        await getChampionName(champData[i].championId, i)
+        
+    }
+
+    // await getExactChampionData(champData[0].championId)
+    await toggleVisible();
 };
+
+//fromt emd
+async function toggleVisible(){
+    document.getElementById("pName").textContent = idInfo.pName;
+
+    images.cIcon1 =  `https://cdn.communitydragon.org/11.1.3/champion/${champData[0].championId}/square`;
+    images.cIcon2 =  `https://cdn.communitydragon.org/11.1.3/champion/${champData[1].championId}/square`;
+    images.cIcon3 =  `https://cdn.communitydragon.org/11.1.3/champion/${champData[2].championId}/square`;
+    images.cGIcon1 =  `https://cdn.communitydragon.org/11.1.3/champion/${playerData[0].championId}/square`;
+    images.cGIcon2 =  `https://cdn.communitydragon.org/11.1.3/champion/${playerData[1].championId}/square`;
+    images.cGIcon3 =  `https://cdn.communitydragon.org/11.1.3/champion/${playerData[2].championId}/square`;
+
+    images.pIcon = `https://cdn.communitydragon.org/11.1.3/profile-icon/${idInfo.iconId}`
+
+    document.getElementById("pIcon").src = images.pIcon;
+    document.getElementById("champ1").src = images.cIcon1;
+    document.getElementById("champ2").src = images.cIcon2;
+    document.getElementById("champ3").src = images.cIcon3;
+
+    document.getElementById("cGIcon1").src = images.cGIcon1;
+    document.getElementById("cGIcon2").src = images.cGIcon2;
+    document.getElementById("cGIcon3").src = images.cGIcon3;
+    document.getElementById("winrate").textContent = winRate();
+
+    for(let i = 0; i <= 2; i++){
+
+        document.getElementById("kda" + i).textContent = kdaMaker(i).toFixed(2);
+
+    }
+
+    for (let i = 0; i <= 2; i++){
+        document.getElementById("kills" + i).textContent = "Kills: " + playerData[i].stats.kills;
+        document.getElementById("deaths" + i).textContent = "Deaths: " + playerData[i].stats.deaths;
+        document.getElementById("assists" + i).textContent = "Assists: " + playerData[i].stats.assists;
+        document.getElementById("vision" + i).textContent = "Vision Score: " + playerData[i].stats.visionScore;
+        document.getElementById("creeps" + i).textContent = "Creep Score: " + playerData[i].stats.totalMinionsKilled;
+
+    }
+
+    var dataPanel = document.getElementById('playerData');
+    var visibilitySetting = dataPanel.style.visibility;
+    dataPanel.style.visibility = "visible";
+    
+}   

@@ -3,9 +3,9 @@
 <head>
 	<title>Voctorius</title>
 	<script src="index.js"></script>
-	<script src="frontend.js"></script>
+	<script src="https://kit.fontawesome.com/fcda298a9c.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 </head>
@@ -18,7 +18,7 @@
 	<div class="search-box" >
 		<input class="search-text" type="text" id="nameInput" placeholder="Enter Username">
 		<div class="container">
-		  <button type="Button" onClick="submitInfo();toggleVisible();">
+		  <button type="Button" onClick="submitInfo()">
 			<img src="img1/search logo.png">
 		  </button>
 	    </div>
@@ -40,7 +40,76 @@
 	</div>
 
 	<div id="playerData">
-		
+		<div id="accountInfo">
+			<img src="" id="pIcon"/>
+			<p id="pName">name</p>
+			<img id="champ1"></img>
+			<div id="sec1">
+			<p id="cName0">name</p>
+			<p id="cPoints0">points</p>
+			</div>
+			<img id="champ2"></img>
+			<div id="sec2">
+			<p id="cName1">name2</p>
+			<p id="cPoints1">points2</p>
+			</div>
+			<img id="champ3"></img>
+			<div id="sec3">
+			<p id="cName2">name3</p>
+			<p id="cPoints2">points3</p>
+			</div>
+
+		</div>
+
+		<div id="gameInfo">
+
+			<img src="" id="cGIcon1">
+			<div id="kdaPanel1">
+				<p>KDA</p>
+				<p id="kda0"></p>
+			</div>
+			<img src="" id="cGIcon2">
+			<div id="kdaPanel2">
+				<p>KDA</p>
+				<p id="kda1"></p>
+			</div>
+			<img src="" id="cGIcon3">
+			<div id="kdaPanel3">
+				<p>KDA</p>
+				<p id="kda2"></p>
+			</div>
+
+			<div id="statsPanel1">
+				<p id="kills0"></p>
+				<p id="deaths0"></p>
+				<p id="assists0"></p>
+				<p id="vision0"></p>
+				<p id="creeps0"></p>
+			</div>
+			<div id="statsPanel2">
+				<p id="kills1"></p>
+				<p id="deaths1"></p>
+				<p id="assists1"></p>
+				<p id="vision1"></p>
+				<p id="creeps1"></p>
+			</div>
+			<div id="statsPanel3">
+				<p id="kills2"></p>
+				<p id="deaths2"></p>
+				<p id="assists2"></p>
+				<p id="vision2"></p>
+				<p id="creeps2"></p>
+			</div>
+
+			<div id="wintitle">
+				<h1>Win</h1>
+				<h2>Rate</h2>
+			</div>
+			<p id="winrate"></p>
+			<i class="fas fa-trophy fa-5x" id="trophy"></i>
+
+			</div>
+		</div>
 	</div>
 </body>
 </html>
